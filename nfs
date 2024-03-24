@@ -10,4 +10,5 @@ ubuntu client:
 sudo apt install nfs-common
 sudo mount host_ip:/var/nfs/general /nfs/general
 
-host_ip:/var/nfs/general    /nfs/general   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+host_ip:/var/nfs/general    /nfs/general   nfs auto,nofail,noatime,nolock,intr,tcp,_netdev,actimeo=1800 0 0
+
