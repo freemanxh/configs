@@ -1,0 +1,13 @@
+ubuntu server:
+sudo apt install nfs-kernel-server
+
+/etc/exports
+/var/nfs/general    client_ip(rw,sync,no_subtree_check)
+
+sudo systemctl restart nfs-kernel-server
+
+ubuntu client:
+sudo apt install nfs-common
+sudo mount host_ip:/var/nfs/general /nfs/general
+
+host_ip:/var/nfs/general    /nfs/general   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
